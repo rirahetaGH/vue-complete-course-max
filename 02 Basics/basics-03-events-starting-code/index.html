@@ -18,31 +18,31 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(5)">Add 5</button>
-      <button v-on:click="reduce(5)">Remove 5</button>
+      <button @click="add(5)">Add 5</button>
+      <button @click="reduce(5)">Remove 5</button>
       <p v-once>Starting: {{counter}}</p>
       <p>Result: {{ counter }}</p>
       <!--  <input
-        v-bind:value="name"
+        :value="name"
         type="text"
-        v-on:input="setName($event, 'Iraheta')"
-        v-on:keyup.enter="confirmInput"
+        @input="setName($event, 'Iraheta')"
+        @keyup.enter="confirmInput"
       /> -->
       <input
-        v-bind:value="name"
+        :value="name"
         type="text"
         v-model="name"
-        v-on:keyup.enter="confirmInput"
+        @keyup.enter="confirmInput"
       />
       <input
-        v-bind:value="lastName"
+        :value="lastName"
         type="text"
         v-model="lastName"
-        v-on:keyup.enter="confirmInput"
+        @keyup.enter="confirmInput"
       />
-      <button v-on:click="resetInput">Reset Input</button>
+      <button @click="resetInput">Reset Input</button>
       <p>Your Name: {{fullname}}</p>
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="" />
         <button>Sign Up</button>
       </form>
