@@ -8,11 +8,13 @@
         name="Manuel Lorenz"
         phone-number="01234 98773"
         email-address="test@test.com"
+        is-favorite="1"
       ></friend-contact>
        <friend-contact
         name="Pepe Perez"
         phone-number="74635 0393873"
         email-address="test2@test.com"
+        is-favorite="0"
       ></friend-contact>
     </ul>
   </section>
