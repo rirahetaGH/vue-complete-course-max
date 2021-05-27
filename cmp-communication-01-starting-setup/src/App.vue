@@ -14,7 +14,6 @@
         name="Pepe Perez"
         phone-number="74635 0393873"
         email-address="test2@test.com"
-        is-favorite="0"
       ></friend-contact>
     </ul>
   </section>
