@@ -28,24 +28,26 @@ export default {
           name: "Manuel Lorenz",
           phone: "0123 45678 90",
           email: "manuel@localhost.com",
-          isFavorite: true
+          isFavorite: true,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "0987 654421 21",
           email: "julie@localhost.com",
-          isFavorite: "friend.isFavorite"
+          isFavorite: "friend.isFavorite",
         },
       ],
     };
   },
-  methods:{
-    toggleFavoriteStatus(friendId){
-      const identifiedFriend = this.friends.find(friend => friend.id === friendId);
+  methods: {
+    toggleFavoriteStatus(friendId) {
+      const identifiedFriend = this.friends.find(
+        (friend) => friend.id === friendId
+      );
       identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
-    }
-  }
+    },
+  },
 };
 </script>
 
