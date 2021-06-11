@@ -1,6 +1,6 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <h3>
           {{ title }}
@@ -9,18 +9,22 @@
           Delete
         </button>
       </header>
-    </div>
-    <p>
-      {{ description }}
-    </p>
-    <nav>
-      <a :href="link">View Resource</a>
-    </nav>
+      <p>
+        {{ description }}
+      </p>
+      <nav>
+        <a :href="link">View Resource</a>
+      </nav>
+    </base-card>
   </li>
 </template>
 
 <script>
+import BaseCard from '../UI/BaseCard.vue';
 export default {
-  props: ['title', 'description', 'link']
+  props: ['title', 'description', 'link'],
+  components: {
+    BaseCard
+  }
 };
 </script>
