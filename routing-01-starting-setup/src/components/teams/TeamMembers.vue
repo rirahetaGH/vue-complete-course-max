@@ -44,6 +44,10 @@ export default {
   created(){
       this.loadTeamMembers(this.teamId);
   },
+  beforeUpdateRoute(_, _2, next){
+    // this.loadTeamMembers(to.params.teamId);
+    next();
+  },
   watch: {
     teamId(newTeamId){
       this.loadTeamMembers(newTeamId);

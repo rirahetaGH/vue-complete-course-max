@@ -26,27 +26,33 @@ const router = createRouter({
         }
       ]
     },
-    { path: '/users', components: { default: UserList, footer: UsersFooter } },
+    {
+      path: '/users',
+      components: { default: UserList, footer: UsersFooter },
+      beforeEnter(to, from, next) {
+        console.log(to, from);
+        next();
+      }
+    },
     { path: '/:notFound(.*)', component: NotFound }
   ],
   scrollBehavior(_, _2, savedPosition) {
     // console.log(to);
     // console.log(from);
     // console.log(savedPosition);
-    if (savedPosition){
+    if (savedPosition) {
       return savedPosition;
     }
     return { left: 0, top: 0 };
   }
 });
 
-router.beforeEach(function(to, from, next){
-  console.log('Global BeforeEach');
-  console.log(to, from);
+router.beforeEach(function(to, from, next) {
+  // console.log('Global BeforeEach');
+  // console.log(to, from);
 
   next();
-
-})
+});
 
 const app = createApp(App);
 
