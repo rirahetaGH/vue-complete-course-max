@@ -29,16 +29,24 @@ const router = createRouter({
     { path: '/users', components: { default: UserList, footer: UsersFooter } },
     { path: '/:notFound(.*)', component: NotFound }
   ],
-  scrollBehavior(to, from, savedPosition) {
-    console.log(to);
-    console.log(from);
-    console.log(savedPosition);
+  scrollBehavior(_, _2, savedPosition) {
+    // console.log(to);
+    // console.log(from);
+    // console.log(savedPosition);
     if (savedPosition){
       return savedPosition;
     }
     return { left: 0, top: 0 };
   }
 });
+
+router.beforeEach(function(to, from, next){
+  console.log('Global BeforeEach');
+  console.log(to, from);
+
+  next();
+
+})
 
 const app = createApp(App);
 
